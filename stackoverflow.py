@@ -11,10 +11,12 @@ msg = ("From: %s\r\nTo: %s\r\nSubject: %s\r\n\r\n"
 msg += "some text\r\n"
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
-
-server.set_debuglevel(1)
-server.ehlo()
-server.starttls()
-server.login(LOGIN, PASSWORD)
-server.sendmail(FROMADDR, TOADDRS, msg)
-server.quit()
+try:
+	server.set_debuglevel(1)
+	server.ehlo()
+	server.starttls()
+	server.login(LOGIN, PASSWORD)
+	#server.sendmail(FROMADDR, TOADDRS, msg)
+	server.quit()
+except(smtplib.SMTPException):
+	print("There is Somthing Wrong")
