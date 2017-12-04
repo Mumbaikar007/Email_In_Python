@@ -1,3 +1,5 @@
 # Email_In_Python
 
->> Using SMTP protocol 
+(under construction :sweat_smile:)
+
+Using SMTP protocol 
