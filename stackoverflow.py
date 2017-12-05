@@ -1,9 +1,9 @@
 import smtplib
 
-FROMADDR = "cmpnb.sfit2015@gmail.com"
+FROMADDR = ""
 LOGIN    = FROMADDR
-PASSWORD = "Cmpnb_123"
-TOADDRS  = ["tanmay.sankhe97@gmail.com"]
+PASSWORD = ""
+TOADDRS  = [""]
 SUBJECT  = "Test"
 
 msg = ("From: %s\r\nTo: %s\r\nSubject: %s\r\n\r\n"

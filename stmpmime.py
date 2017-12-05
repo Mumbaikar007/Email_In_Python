@@ -13,30 +13,33 @@ user = ""
 password = ""
 
 smtpserver = smtplib.SMTP('smtp.gmail.com', 587, timeout=30)
-print("Here")
-smtpserver.ehlo()
-smtpserver.starttls()
-smtpserver.ehlo()
-smtpserver.login ( user, password)
+#print("Here")
+try:
+    smtpserver.ehlo()
+    smtpserver.starttls()
+    smtpserver.ehlo()
+    smtpserver.login ( user, password)
 
-print("Here")
+    #print("Here")
 
-msg = MIMEMultipart()
+    msg = MIMEMultipart()
 
-msg['To']=to
-msg['From']=user
-msg['Subject']='IOT'
+    msg['To']=to
+    msg['From']=user
+    msg['Subject']='Dog'
 
-msg.attach(MIMEText("Hello"))
+    msg.attach(MIMEText("Hello"))
 
-print("Here")
-#mail
-fp=open('dog.png','rb')
-msg.attach(MIMEImage(fp.read()))
-print("Here")
-smtpserver.sendmail ( user, to , msg.as_string())
-print("Here")
-#smtpserver.close()
+    #print("Here")
+    #mail 
+    fp=open('dog.png','rb')
+    msg.attach(MIMEImage(fp.read()))
+    #print("Here")
+    smtpserver.sendmail ( user, to , msg.as_string())
+    #print("Here")
+    smtpserver.close()
 
-print("mailed !!")
+    print("mailed !!")
 
+except(smtplib.SMTPException):
+	print("There is Somthing Wrong")
