@@ -6,40 +6,47 @@ from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 import time
 
+class MailOject:
 
-# smtp gmail
-to = ""
-user = ""
-password = ""
+    def __init__(self, to, user, password, subject, message):
+        self.to = to
+        self.user = user
+        self.password = password
+        self.subject = subject
+        self.message = message
 
-smtpserver = smtplib.SMTP('smtp.gmail.com', 587, timeout=30)
-#print("Here")
-try:
-    smtpserver.ehlo()
-    smtpserver.starttls()
-    smtpserver.ehlo()
-    smtpserver.login ( user, password)
+    def Sending_Email(self):
+        # smtp gmail
 
-    #print("Here")
 
-    msg = MIMEMultipart()
+        smtpserver = smtplib.SMTP('smtp.gmail.com', 587, timeout=30)
+        #print("Here")
+        try:
+            smtpserver.ehlo()
+            smtpserver.starttls()
+            smtpserver.ehlo()
+            smtpserver.login ( self.user, self.password)
 
-    msg['To']=to
-    msg['From']=user
-    msg['Subject']='Dog'
+            #print("Here")
 
-    msg.attach(MIMEText("Hello"))
+            msg = MIMEMultipart()
 
-    #print("Here")
-    #mail 
-    fp=open('dog.png','rb')
-    msg.attach(MIMEImage(fp.read()))
-    #print("Here")
-    smtpserver.sendmail ( user, to , msg.as_string())
-    #print("Here")
-    smtpserver.close()
+            msg['To'] = self.to
+            msg['From'] = self.user
+            msg['Subject'] = self.subject
 
-    print("mailed !!")
+            msg.attach(MIMEText(self.message))
 
-except(smtplib.SMTPException):
-	print("There is Somthing Wrong")
+            #print("Here")
+            #mail
+            fp=open('dog.png','rb')
+            msg.attach(MIMEImage(fp.read()))
+            #print("Here")
+            smtpserver.sendmail ( self.user, self.to , msg.as_string())
+            #print("Here")
+            smtpserver.close()
+
+            print("mailed !!")
+
+        except(smtplib.SMTPException):
+            print("There is Somthing Wrong")
