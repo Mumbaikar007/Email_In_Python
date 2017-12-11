@@ -26,11 +26,11 @@ class EmailClient(QWidget):
         self.attachments_label = QLabel("No Attachments yet !!")
         self.attachments_list = []
 
-        self.sender_email_le.setText("10abcdefghij01@gmail.com")
-        self.sender_password_le.setText("I can't tell you !!")
-        self.receiver_email_le.setText("spidermanavanger@gmail.com")
-        self.subject_le.setText("Stackoverflow3")
-        self.text_message.setPlainText("OKk !!")
+        self.sender_email_le.setText("")
+        self.sender_password_le.setText("")
+        self.receiver_email_le.setText("")
+        self.subject_le.setText("")
+        self.text_message.setPlainText("")
 
         self.clear_button = QPushButton('Clear')
         self.insert_button = QPushButton('Insert')
