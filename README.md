@@ -10,14 +10,21 @@ Using SMTP protocol
 - PyQt5
 
 using pip3
-```pip3 install pyqt5
+```
+pip3 install pyqt5
 ```
 
 for conda
-``` conda install -c dsdale24 pyqt5 
+``` 
+conda install -c dsdale24 pyqt5
 ```
+
+- Enable Allowing less secure apps to access your account
+
 ## Usage
 
-``` python main.py
+``` 
+python main.py
+
 ```
 
