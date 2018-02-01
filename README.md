@@ -18,7 +18,7 @@ for conda
 conda install -c dsdale24 pyqt5
 ```
 
-- Enable Allowing less secure apps to access your account
+- Enable "Allowing less secure apps" on your gmail account
 
 ## Usage
 
